@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>AIキャリアアドバイザー</title>
+  <link rel="stylesheet" href="style.css">
+          <!-- fontawesomeを埋め込み -->
+          <script
+          src="https://kit.fontawesome.com/ef226e501a.js"
+          crossorigin="anonymous"
+        ></script>
+          <!-- googleフォント埋め込み -->
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Dela+Gothic+One&family=Rampart+One&family=Shizuru&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap"
+            rel="stylesheet"
+          />
+</head>
+<body>
+<!-- タイトルロゴ -->
+<div class="app-theme">
+  <p class="tytle-logo">
+    <span>C</span>areer <span>S</span>tep <span>N</span>avi
+  </p>
+  <a href="index.html" class="home_link"
+    >ホームへ戻る<i class="fa fa-solid fa-house"></i
+  ></a>
+</div>
+
+<!-- トップの画像コンテンツ表示 -->
+<div class="main_contents">
+<img src="img/s_01.png" class="img" />
+<img src="img/s_02.png" class="img" />
+<img src="img/s_03.png" class="s_img" />
+<img src="img/s_04.png" class="img" />
+<img src="img/s_05.png" class="img" />
+<img src="img/s_06.png" class="img" />
+<h1>AIキャリアアドバイザー</h1>
+<div class="rule">
+  <div class="rule_tape"></div>
+  <p class="rule_title">利用方法</p>
+  <p class="rule_message">
+    AIアドバイザーにキャリアに関する相談をすることができます。<br />
+    アドバイザーのタイプを4つから選択し、会話を開始するをクリックしてください。<br />
+    チャットと音声、どちらでも相談することが可能です。
+  </p>
+</div>
+
+
+    <div class="chat-top">
+    <p for="response-style">希望のアドバイザーのタイプを選択してください</p>
+    <div class="opt_zone">
+    <div class="opt_box" data-style="educational" data-description="【教育タイプ】明確な指示と教育的なアドバイスを通じて、何をするべきかを教えます。目標達成に向けた具体的なステップを提供します。">
+    <img src="img/c_01.jpeg" class="img2"><p class="opt">教育タイプ</p></div>
+    <div class="opt_box" data-style="supportive" data-description="【支援タイプ】感情を理解し、共感を持って寄り添いながら、ゆっくりと導いてくれます。穏やかに成長を支えてくれるスタイルです。">
+    <img src="img/c_02.png" class="img2"><p class="opt">支援タイプ</p></div>
+    <div class="opt_box" data-style="rational"  data-description="【合理的タイプ】論理的な説明と事実に基づいたアドバイスで、納得のいく解決策を導き出します。合理的な判断を助けます。">
+    <img src="img/c_03.jpeg" class="img2"><p class="opt">合理的タイプ</p></div>
+    <div class="opt_box" data-style="passionate"  data-description="【情熱タイプ】 情熱的なエネルギーで応援し、モチベーションの向上を図ります。目標達成に向けてポジティブな刺激を提供します。">
+    <img src="img/c_04.png" class="img2"><p class="opt">情熱タイプ</p></div>
+    </div>
+  <div id="description-box" style="display: none;"></div>
+
+
+    <button onclick="startConversation()" class="c_start">相談を開始する  <i class="fa-solid fa-comments fa-xl" style="color: #2bc3c3;"></i></button>
+    <!-- 音声フォーム -->
+    <button type="button" class="b_start" id="toggle-recognition"><i class="fa-solid fa-microphone fa-xl" style="color: #2bc3c3;"></i></button>
+    <!-- <button type="button" class="stop">終了</button> -->
+    <button id="toggle-todo-btn" class="todo-toggle-btn">TODO  <i class="fa-solid fa-list-check fa-xl" style="color: #2bc3c3;"></i></button>
+    </div>
+    <div class="output"></div>
+    <!-- 入力フォーム -->
+    <input type="text" id="chat-input" placeholder="チャットで相談する" />
+    <div id="chat-window">
+      <pre id="chat-history" style="display: none;"></pre>
+  </div>
+
+
+  <!-- 06_js追加機能 -->
+<div id="todo-sidebar" class="todo-sidebar">
+  <h2>TODO  <i class="fa-solid fa-list-check"style="color: #2bc3c3;"></i></h2>
+  <input type="text" id="todo-input" placeholder="新しいTODOを追加" />
+  <button id="add-todo-btn">TODO Listに追加  <i class="fa-solid fa-plus" style="color: white"></i></button>
+  <ul id="todo-list"></ul>
+  <h3>Compreted</h3>
+  <ul id="completed-todo-list"></ul>
+</div>
+</div>
+
+</body>
+</html>
+<script src="script.js"></script>
